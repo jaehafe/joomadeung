@@ -27,7 +27,7 @@ const ProjectHead = (props: ProjectHeadProps) => {
         title: `${name} | Adam blog`,
         images: [
           {
-            url: `https://joomadeung${image}`,
+            url: `https://www.joomadeung.com/${image}`,
             alt: name,
             width: 1600,
             height: 960,
