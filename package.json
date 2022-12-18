@@ -1,0 +1,213 @@
+{
+  "name": "honghong.me",
+  "private": true,
+  "description": "Personal website and blog made using TypeScript, Next.js, Tailwind",
+  "author": "小康 <info@honghong.me>",
+  "license": "MIT",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "lint:fix": "eslint src --fix && yarn format",
+    "lint:strict": "eslint --max-warnings=0 src",
+    "format": "prettier -w .",
+    "format:check": "prettier -c .",
+    "type-check": "tsc --noEmit",
+    "prepare": "husky install",
+    "prisma:studio": "dotenv -e .env.local -- prisma studio",
+    "prisma:push": "dotenv -e .env.local -- prisma db push",
+    "test:watch": "jest --watch",
+    "test": "jest"
+  },
+  "dependencies": {
+    "@giscus/react": "^2.2.4",
+    "@next/font": "13.0.8-canary.0",
+    "@prisma/client": "^4.7.1",
+    "@radix-ui/react-dialog": "^1.0.2",
+    "@radix-ui/react-dropdown-menu": "^2.0.1",
+    "@tabler/icons": "^1.117.0",
+    "@types/node": "18.11.15",
+    "@types/react": "18.0.26",
+    "@types/react-dom": "18.0.9",
+    "@vercel/analytics": "^0.1.6",
+    "@vercel/og": "^0.0.21",
+    "clsx": "^1.2.1",
+    "contentlayer": "^0.2.9",
+    "dayjs": "^1.11.7",
+    "eslint": "8.29.0",
+    "eslint-config-next": "13.0.7",
+    "framer-motion": "^7.10.0",
+    "github-slugger": "^2.0.0",
+    "googleapis": "^109.0.1",
+    "hastscript": "^7.1.0",
+    "image-size": "^1.0.2",
+    "kbar": "^0.1.0-beta.39",
+    "next": "13.0.8-canary.0",
+    "next-auth": "^4.18.6",
+    "next-contentlayer": "^0.2.9",
+    "next-seo": "^5.15.0",
+    "next-themes": "^0.2.1",
+    "react": "18.2.0",
+    "react-confetti": "^6.1.0",
+    "react-countup": "^6.4.0",
+    "react-dom": "18.2.0",
+    "react-hot-toast": "^2.4.0",
+    "react-textarea-autosize": "^8.4.0",
+    "react-use": "^17.4.0",
+    "rehype-autolink-headings": "^6.1.1",
+    "rehype-pretty-code": "^0.5.1",
+    "rehype-slug": "^5.1.0",
+    "remark-gfm": "^3.0.1",
+    "rss": "^1.2.2",
+    "sharp": "^0.31.2",
+    "shiki": "^0.11.1",
+    "swr": "^2.0.0",
+    "tailwind-merge": "^1.8.0",
+    "unist-util-visit": "^4.1.1",
+    "zod": "^3.20.2"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^17.3.0",
+    "@commitlint/config-conventional": "^17.3.0",
+    "@tailwindcss/typography": "^0.5.8",
+    "@testing-library/jest-dom": "^5.16.5",
+    "@testing-library/react": "^13.4.0",
+    "@types/rss": "^0.0.29",
+    "@typescript-eslint/eslint-plugin": "^5.46.1",
+    "@typescript-eslint/parser": "^5.46.1",
+    "autoprefixer": "^10.4.13",
+    "cz-conventional-changelog": "^3.3.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "eslint-plugin-simple-import-sort": "^8.0.0",
+    "eslint-plugin-unused-imports": "^2.0.0",
+    "husky": "^8.0.2",
+    "jest": "^29.3.1",
+    "jest-environment-jsdom": "^29.3.1",
+    "lint-staged": "^13.1.0",
+    "postcss": "^8.4.20",
+    "prettier": "^2.8.1",
+    "prettier-plugin-tailwindcss": "^0.2.1",
+    "prisma": "^4.7.1",
+    "tailwindcss": "^3.2.4",
+    "typescript": "^5.0.0-dev.20221208"
+  },
+  "lint-staged": {
+    "src/**/*.{js,jsx,ts,tsx}": [
+      "eslint --max-warnings=0",
+      "prettier -w"
+    ],
+    "src/**/*.{json,css,scss,md,mdx}": [
+      "prettier -w"
+    ]
+  },
+  "prettier": {
+    "arrowParens": "always",
+    "singleQuote": true,
+    "jsxSingleQuote": true,
+    "tabWidth": 2,
+    "semi": false
+  },
+  "eslintConfig": {
+    "env": {
+      "browser": true,
+      "es2021": true,
+      "node": true
+    },
+    "plugins": [
+      "@typescript-eslint",
+      "simple-import-sort",
+      "unused-imports"
+    ],
+    "extends": [
+      "eslint:recommended",
+      "next",
+      "next/core-web-vitals",
+      "plugin:@typescript-eslint/recommended",
+      "prettier"
+    ],
+    "rules": {
+      "no-unused-vars": "off",
+      "no-console": "warn",
+      "@typescript-eslint/explicit-module-boundary-types": "off",
+      "react/display-name": "off",
+      "react/jsx-curly-brace-presence": [
+        "warn",
+        {
+          "props": "never",
+          "children": "never"
+        }
+      ],
+      "@typescript-eslint/no-unused-vars": "off",
+      "unused-imports/no-unused-imports": "warn",
+      "unused-imports/no-unused-vars": [
+        "warn",
+        {
+          "vars": "all",
+          "varsIgnorePattern": "^_",
+          "args": "after-used",
+          "argsIgnorePattern": "^_"
+        }
+      ],
+      "simple-import-sort/exports": "warn",
+      "simple-import-sort/imports": [
+        "warn",
+        {
+          "groups": [
+            [
+              "^@?\\w",
+              "^\\u0000"
+            ],
+            [
+              "^.+\\.s?css$"
+            ],
+            [
+              "^@/lib",
+              "^@/hooks"
+            ],
+            [
+              "^@/data"
+            ],
+            [
+              "^@/components",
+              "^@/container"
+            ],
+            [
+              "^@/store"
+            ],
+            [
+              "^@/"
+            ],
+            [
+              "^\\./?$",
+              "^\\.(?!/?$)",
+              "^\\.\\./?$",
+              "^\\.\\.(?!/?$)",
+              "^\\.\\./\\.\\./?$",
+              "^\\.\\./\\.\\.(?!/?$)",
+              "^\\.\\./\\.\\./\\.\\./?$",
+              "^\\.\\./\\.\\./\\.\\.(?!/?$)"
+            ],
+            [
+              "^@/types"
+            ],
+            [
+              "^"
+            ]
+          ]
+        }
+      ]
+    },
+    "globals": {
+      "React": true,
+      "JSX": true
+    }
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  },
+  "version": "2.1.1"
+}

@@ -1,0 +1,244 @@
+---
+title: What the Git!
+date: '2022-12-15T00:00:00Z'
+modifiedTime: '2022-12-18T00:00:00Z'
+summary: First step to collaborate with team using Git & Github
+image: 'how-to-activate-windows-all-versions-for-free/gitflow.png'
+---
+
+## git flow 협업
+
+> 팀장: jaehafe1
+
+> 팀원: jaehafe
+
+> organization: zoumadeng1
+
+> repository: gitflow-prac2
+
+## 1. 팀장이 초기 세팅(npm, gitignore)를 하고 해당 repo를 로컬에 `git clone` 한다.
+
+## 2. clone 후, `git flow init` 그러면 아래와 같이 develop branch가 생긴다
+
+![1](</static/images/blog/github/1.png>)
+
+## 3. .gitignore 파일을 생성할 때
+
+`git flow feature start proj-init` 커맨드를 입력하고 `git add` `git commit`을 한다
+
+ `git flow feature start <branch name>`
+  → **새로운 기능 개발**을 위한 branch가 “feature/branch name”라는 이름으로 생성되고, 자동으로 해당 branch로 checkout 된다.
+
+![2](</static/images/blog/github/2.png>)
+
+## 4. feature/proj-init 브랜치에서 기능 개발을 시작한다.
+
+.gitignore 와 app.js 파일을 생성 후, 각각 커밋한다.
+
+## 5. 팀장 초기 세팅을 마치면`git flow feature finish proj-init` 커맨드를 입력한다.
+
+ `git flow feature finish <branch name>`
+  → **새 기능의 개발을 완료**하면 커맨드를 입력한다.
+  feature 브랜치 즉 proj-init 브랜치를 develop 브랜치에 merge하고, feature 브랜치를 삭제한다. 그리고 develop 브랜치로 돌아간다.
+
+그러면 아래와 같은 vim 화면이 나온다.
+
+`:wq`입력 후 나가면 된다.
+
+![3](</static/images/blog/github/3.png>)
+
+`git lg`로 지금까지 진행한 상태를 확인해보면 아래와 같다.
+
+![4](</static/images/blog/github/4.png>)
+
+→ main
+
+크라켄으로 확인해보면 예쁜 ui로 확인이 가능하다.
+
+![5](</static/images/blog/github/5.png>)
+
+## 6. 이제 팀장의 초기 세팅이 끝났다면 gitflow-prac2 리파지토리에 push를 하면 된다.
+
+- 첫 Push이기 때문에 `-u` upstream을 사용한다.
+
+`git push -u origin develop`
+
+![6](</static/images/blog/github/6.png>)
+
+> organization: zoumadeng1
+
+> repo: gitflow-prac2
+
+> branch: develop
+
+지금까지는 팀장의 초기세팅이었고, 팀원들한테 ‘이 세팅으로 개발을 시작하세요’의 작업이었다.
+
+다음으로는 팀원에 입장에서 flow를 설명하겠습니다.
+
+---
+
+> 팀원: jaehafe
+
+> organization: zoumadeng1
+
+> repository(이하 repo): gitflow-prac2
+
+> branch: develop
+
+## 7. 상기 리포에 들어가 팀장이 맡긴 issues를 ‘팀원인 내가’ 작성한다.
+
+![7](</static/images/blog/github/7.png>)
+
+그러면 팀장은 assignee를 팀원으로 지정하고 lable은 ‘enhancement’로 지정한다.
+
+new feature: enhancement
+
+![8](</static/images/blog/github/8.png>)
+
+팀장은 issue가 날라올때마다 이렇게 세팅해주면 된다.
+
+## 8. 팀원은 개발 시작!
+
+시작 방법: gitflow-prac2 repo를 자신의 깃헙에 fork 해온다
+
+![9](</static/images/blog/github/9.png>)
+
+## 9. fork 한 repo에서 git clone을 해와 팀원의 local에서 작업을 시작한다.
+
+![10](</static/images/blog/github/10.png>)
+
+## 10. 현재 브랜치는 main에 있기 때문에 `git flow init`
+
+커맨드를 입력해 develop 브랜치에서 작업을 시작한다.
+
+![11](</static/images/blog/github/11.png>)
+
+app.js가 있는 것을 확인할 수 있다.
+
+## 11. `git remote` 설정
+
+- 팀원의 local에서 작업 →
+
+- 팀원의 remote(github repo) 전달 →
+
+- 팀원 remote → 팀장 remote 간접적으로 전달(Pull requests)
+
+  > Pull request란? 당신의 사본으로 이런일을 했는데 당신의 원본에 포함시키고 싶습니다.
+
+## 12. 다른 팀원들이 한 작업도 있기 때문에 오리지널 repo(zoumadeng1)에서 다이렉트로 당겨온다.
+
+그렇기 때문에 오리지널repo의 develop브랜치 주소를 `git remot`커맨드로 등록해준다
+
+`git remote add upstream https://github.com/zoumadeng1/gitflow-prac2.git`
+
+→ `git remote add <깃헙 별칭> <깃헙repository주소> // 깃헙 이름을 upstream으로 정함`
+
+![12](</static/images/blog/github/12.png>)
+
+origin: 내 repo
+
+upstream: 팀 repo, upstream을 push하는 일은 없다. 참조만 한다.
+
+## 13. 이제 진짜 팀원의 본격적인 issue 처리 시작
+
+`git flow feature start javascript`
+
+![13](</static/images/blog/github/13.png>)
+
+feature/javascript 브랜치가 만들어졌고, 팀원인 나는 여기서 일을 시작하면 된다.
+
+![14](</static/images/blog/github/14.png>)
+
+앞서 3개의 task를 작성했으니 3개에 나눠 commit를 하면 된다.
+
+## 14. task를 다 했다면 mark down에 체크를 하고 `git flow feature finish javascript` 커맨드를 입력한다. 입력후 나오는 merge commit은 바로 넘어가도 된다.
+
+![15](</static/images/blog/github/15.png>)
+
+![16](</static/images/blog/github/16.png>)
+
+**→ feature/javascript 브랜치에서 작업한 내용을 develop으로 merge 했다는 내용이다.**
+
+## 15. 그러면 로컬에서 작업한 내용은 remote(깃헙)으로 push 해준다. 처음 push 이기 때문에 `git push -u origin develop`
+
+> ‘-u: upstream’을 써준다.
+
+![17](</static/images/blog/github/17.png>)
+
+정상적으로 push 된 것이 확인된다.
+
+그리고 내 remote에서 팀의 remote로 Pull request를 날리면 된다.
+
+## 16. pull requests 탭에서 New pull request 버튼 클릭, base repository base, head repository, compare를 잘 확인해준다.
+
+내 remote의 develop브랜치 → 팀 remote의 develop 브랜치
+
+![18](</static/images/blog/github/18.png>)
+
+그리고 create pull request 버튼 클릭
+
+## 17. PR 내용은 issue 등록한 번호를 태그 가능하기 때문에 `reslove #1` 라고 쓰면 자동으로 지정된다. reviewer는 팀장을 태그하면 된다.
+
+![19](</static/images/blog/github/19.png>)
+
+→ ‘1번 issue를 해결한 게 위의 PR’이다 라는 뜻
+
+**팀원은 PR을 보내면 팀장의 review를 기다린다**
+
+---
+
+## 18. 팀장은 code review를 하고 commet 를 단다.
+
+![20](</static/images/blog/github/20.png>)
+
+## 19. 팀원은 code review를 보고 수정한다.
+
+수정 시 기능 단위로 commit!
+
+두 번째 push이기 때문에 `-u`가 필요 없다. `git push origin develop`
+
+![21](</static/images/blog/github/21.png>)
+
+## 20. 팀장은 Files changed 탭에서 팀원의 수정사항을 다시 code review 한다. 문제 없으면 viewd에 체크, Approve
+
+![22](</static/images/blog/github/22.png>)
+
+![23](</static/images/blog/github/23.png>)
+
+merge pull request 클릭 이전의 develop:
+
+![24](</static/images/blog/github/24.png>)
+
+클릭 이후의 develop:
+
+![25](</static/images/blog/github/25.png>)
+
+→ merge가 성공적으로 됐다!
+
+## 21. 반영이 된 코드를 다른 사람이 어떻게 보느냐?
+
+상황: 다른 팀원이 feature브랜치를 따서 일하는 도중, develop에 업데이트 사항이 있다고 한다. 변경사항을 보고 싶다면, `git fetch` and `git merge` 혹은 `git pull` 커맨드를 입력하면 된다.
+
+참고로 아래 사진과 같이 팀의 develop 브랜치를 upstream으로 참고하고 있다.
+
+![26](</static/images/blog/github/26.png>)
+
+`git fetch upstream develop`:’방금 업데이트 된 사항을 나한테 가져와라’ 라는 뜻
+
+![27](</static/images/blog/github/27.png>)
+
+→ FETCH_HEAD라는 임시 브랜치에 담아놓고 원하는 내용만 가져올 수 있고 or 전체 내용을 흡수할 수 있다.
+
+`git merge FETCH_HEAD`
+
+![28](</static/images/blog/github/28.png>)
+
+→ 변경 사항이 없으면 상기와 같이 나온다.
+
+`git pull upstream develop`: 혼자 작업할 때 사용
+
+![29](</static/images/blog/github/29.png>)
+
+**fetch and merge 방법이 더 안전, 사용 권장**
+
+---
