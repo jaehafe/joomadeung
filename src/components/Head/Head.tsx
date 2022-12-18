@@ -21,14 +21,14 @@ const Head = (props: HeadProps) => {
         title={title}
         defaultTitle='Adam – Developer'
         description={description}
-        canonical={`https://www.joomadeung.com/${pathname}`}
+        canonical={`https://joomadeung.com${pathname}`}
         twitter={{
           cardType: 'summary_large_image',
           site: '@jaehafe',
           handle: '@jaehafe',
         }}
         openGraph={{
-          url: `https://www.joomadeung.com/${pathname}`,
+          url: `https://joomadeung.com${pathname}`,
           type: 'website',
           title: title ?? 'Adam – Developer',
           description,

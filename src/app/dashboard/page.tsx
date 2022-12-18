@@ -57,32 +57,32 @@ const DashboardPage = async () => {
             <Card
               icon={<IconBrandYoutube />}
               title='YouTube subscribers'
-              href='https://youtube.com/@tszhong0411'
+              href='https://youtube.com/@jaehafe'
               data={youtube.subscribers}
             />
             <Card
               icon={<IconBrandYoutube />}
               title='YouTube views'
-              href='https://youtube.com/@tszhong0411'
+              href='https://youtube.com/@jaehafe'
               data={youtube.views}
             />
             <Card
               icon={<IconBrandGithub />}
               title='GitHub followers'
-              href='https://github.com/tszhong0411'
+              href='https://github.com/jaehafe'
               data={github.followers}
             />
             <Card
               icon={<IconBrandGithub />}
               title='GitHub stars'
-              href='https://github.com/tszhong0411'
+              href='https://github.com/jaehafe'
               data={github.stars}
             />
           </div>
           <Card
             icon={<IconPencil />}
             title='Blog total views'
-            href='https://honghong.me'
+            href='https://joomadeung.com'
             data={blog.views}
           />
         </>

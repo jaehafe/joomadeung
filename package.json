@@ -1,8 +1,8 @@
 {
-  "name": "honghong.me",
+  "name": "jaehafe",
   "private": true,
   "description": "Personal website and blog made using TypeScript, Next.js, Tailwind",
-  "author": "小康 <info@honghong.me>",
+  "author": "jaehafe",
   "license": "MIT",
   "scripts": {
     "dev": "next dev",

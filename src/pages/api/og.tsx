@@ -10,9 +10,10 @@ export const config = {
 const handler = async (req: NextRequest) => {
   const { searchParams } = req.nextUrl
   const title = searchParams.get('title')
-  const url = searchParams.get('url') ?? 'honghong.me'
+  const url = searchParams.get('url') ?? 'joomadeung.com'
   const image =
-    searchParams.get('image') ?? 'https://honghong.me/static/images/avatar.png'
+    searchParams.get('image') ??
+    'https://joomadeung.com/static/images/avatar.png'
   const author = searchParams.get('author') ?? '小康'
   const date = dayjs(searchParams.get('date')).format('DD MMMM YYYY')
 
@@ -28,7 +29,7 @@ const handler = async (req: NextRequest) => {
           color: '#fff',
           padding: '64px 48px',
           backgroundImage:
-            'url(https://honghong.me/static/images/og/gradient_bg.png)',
+            'url(https://joomadeung.com/static/images/og/gradient_bg.png)',
         }}
       >
         <div

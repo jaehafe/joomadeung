@@ -36,7 +36,7 @@ const BlogPostHead = (props: BlogPostHeadProps) => {
         images: [
           {
             // url: `https://honghong.me/api/og?title=${title}&date=${date}`,
-            url: `https://jaehafe/api/og?title=${title}&date=${date}`,
+            url: `https://joomadeung.com/api/og?title=${title}&date=${date}`,
             alt: title,
             width: 1200,
             height: 630,

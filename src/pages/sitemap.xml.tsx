@@ -8,13 +8,13 @@ const createSitemap = (
 ) => `<?xml version="1.0" encoding="UTF-8"?>
     <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
       <url>
-        <loc>https://honghong.me/</loc>
+        <loc>https://joomadeung.com/</loc>
       </url>
       ${slugs
         .map((slug) => {
           return `
               <url>
-                  <loc>https://honghong.me/${slug}</loc>
+                  <loc>https://joomadeung.com/${slug}</loc>
               </url>
           `
         })

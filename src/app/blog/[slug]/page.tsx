@@ -69,7 +69,7 @@ const BlogPostPage = (props: BlogPostPageProps) => {
     <>
       <ArticleJsonLd
         useAppDir={true}
-        url={`https://honghong.me${pathname}`}
+        url={`https://joomadeung.com${pathname}`}
         title={title}
         datePublished={date}
         modifiedTime={ISOModifiedTime}
@@ -77,14 +77,14 @@ const BlogPostPage = (props: BlogPostPageProps) => {
         authorName={{
           name: 'Adam',
           // url: 'https://honghong.me',
-          url: 'https://jaehafe',
+          url: 'https://joomadeung.com',
         }}
         // publisherLogo='https://honghong.me/static/images/avatar.png'
-        publisherLogo='https://jaehafe/static/images/avatar.png'
+        publisherLogo='https://joomadeung.com/static/images/avatar.png'
         publisherName='Adam'
         type='Article'
         // images={[`https://honghong.me/api/og?title=${title}&date=${date}`]
-        images={[`https://jaehafe/api/og?title=${title}&date=${date}`]}
+        images={[`https://joomadeung.com/api/og?title=${title}&date=${date}`]}
       />
       <div>{formattedDate}</div>
       <h1 className='mb-4 text-3xl font-bold'>{title}</h1>
