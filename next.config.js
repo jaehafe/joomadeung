@@ -24,7 +24,7 @@ const nextConfig = {
     return [
       {
         source: '/youtube',
-        destination: 'https://youtube.com/@tszhong0411',
+        destination: 'https://youtube.com/@miniapp223',
         permanent: false,
       },
       {

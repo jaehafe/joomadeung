@@ -34,7 +34,7 @@ const Head = (props: HeadProps) => {
           description,
           images: [
             {
-              url: 'https://www.joomadeung.com/static/images/og/og.png',
+              url: 'https://joomadeung.com/static/images/og/og.png',
               width: 1200,
               height: 630,
               alt: description,
