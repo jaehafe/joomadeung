@@ -5,8 +5,8 @@ import { getAllPosts } from '@/lib/mdx'
 
 const handler = async (_: NextApiRequest, res: NextApiResponse) => {
   const feed = new RSS({
-    title: '小康 Blog',
-    description: "Hong's personal website and blog",
+    title: 'Adam Blog',
+    description: "Adam's personal website and blog",
     site_url: 'https://joomadeung.com',
     feed_url: 'https://joomadeung.com/feed.xml',
     language: 'en',
@@ -23,7 +23,7 @@ const handler = async (_: NextApiRequest, res: NextApiResponse) => {
       url: `https://joomadeung.com/blog/${slug}`,
       date: date,
       description: summary,
-      author: '小康',
+      author: 'Adam',
     })
   })
 
